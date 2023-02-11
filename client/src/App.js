@@ -15,12 +15,6 @@ function App() {
   });
    const [col,setCol]=React.useState([]);
    const [values,setValues]=React.useState([]);
-  // function handleChange({target:{value,name}}){ //de-structuring synthetic event object to use only the target object
-  //   setData({
-  //     ...data,
-  //     [name]:value
-  //   });
-  // }
 
 
     function handleChange(event){
@@ -28,7 +22,6 @@ function App() {
         header:true,
         skipEmptyLines:true,
         complete:function(result){
-          // console.log(result.data);
           const columnArray=[];
           const valuesArray=[];
           result.data.map((d)=>{
@@ -109,14 +102,6 @@ function App() {
       }
   return (
     <div className="App">
-     {/* <input type="number" placeholder="Bikes" name="Bikes" onChange={handleChange}></input>
-     <input type="number" placeholder="Autos" name="Autos" onChange={handleChange}></input>
-     <input type="number" placeholder="Cars" name="Cars" onChange={handleChange}></input> 
-     <input type="number" placeholder="Unpaid Amount" name="Unpaid" onChange={handleChange}></input>
-     <h3>Collections from different payment modes</h3>
-     <input type="number" placeholder="Cash" name="Cash" onChange={handleChange}></input>
-     <input type="number" placeholder="Digital" name="Digital" onChange={handleChange}></input>
-      */}
      <input type="file" name="file" accept=".csv" onChange={handleChange}/>
      <button onClick={handleClick}>Generate PDF</button>
     </div>
