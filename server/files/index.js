@@ -1,6 +1,6 @@
 module.exports=({Bikes,Autos,Cars,Unpaid,Cash,Digital})=>{
-    const totalVehicles=parseInt(Bikes)+parseInt(Autos)+parseInt(Cars);
-    const total=parseInt(Cash)+parseInt(Digital);
+    const totalVehicles=parseFloat(Bikes)+parseFloat(Autos)+parseFloat(Cars);
+    const total=parseFloat(Cash)+parseFloat(Digital);
     const date=new Date();
     return `
     <html>
@@ -28,19 +28,19 @@ module.exports=({Bikes,Autos,Cars,Unpaid,Cash,Digital})=>{
      <td>Date: ${`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</td>
    </tr>
          <tr>
-     <td style="background-color:lightgrey;">No. of Bikes: ${Bikes}</td>
+     <td style="background-color:lightgrey;">Bikes: ₹${Bikes}</td>
    </tr>
          <tr>
-     <td>No. of Autos: ${Autos}</td>
+     <td>Autos: ₹${Autos}</td>
    </tr> 
         <tr>
-     <td style="background-color:lightgrey;" >No. of Cars: ${Cars}</td>
+     <td style="background-color:lightgrey;" >Cars: ₹${Cars}</td>
    </tr> 
         <tr>
      <td>Total: ${totalVehicles}</td>
    </tr>
         <tr>
-     <td style="background-color:lightgrey;" >Unbilled: ${Unpaid}</t>
+     <td style="background-color:lightgrey;" >Unbilled: ₹${Unpaid}</t>
    </tr>
     <tr>
      <th>Collection</th>
