@@ -17,3 +17,5 @@ In the client side, run:
  In the server side, run :
 ### `nodemon index.js`
 
+Note: The generated report is made in accordance with the format of the sample .csv file. Thus, if you use your custom csv file, the generated report will have undefined values
+ 
