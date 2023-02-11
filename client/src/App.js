@@ -3,6 +3,7 @@ import axios from 'axios';
 import {saveAs} from 'file-saver';
 import './App.css';
 import Papa from  'papaparse';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
 
 function App() {
    const [data,setData]=React.useState({
@@ -18,6 +19,7 @@ function App() {
 
 
     function handleChange(event){
+      alert('file uploaded!')
       Papa.parse(event.target.files[0],{
         header:true,
         skipEmptyLines:true,
@@ -102,8 +104,13 @@ function App() {
       }
   return (
     <div className="App">
-     <input type="file" name="file" accept=".csv" onChange={handleChange}/>
-     <button onClick={handleClick}>Generate PDF</button>
+    <div className="inputDiv">
+    <label id="uploadLabel" htmlFor="fileUpload"><UploadFileIcon id="uploadLabelIcon"  />Upload CSV File</label>
+     <input id="fileUpload" type="file" name="file" accept=".csv" onChange={handleChange}/>
+     </div>
+     <div>
+     <button id="generateBtn" onClick={handleClick}>Generate PDF</button>
+     </div>
     </div>
   );
 }
