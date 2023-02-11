@@ -1,5 +1,5 @@
 # report-generator
-A report generator based on React and Node Js. 
+This is a custom report generator that I made using React and Node Js. It has the functionality to parse .csv file data and make the report of the summary of the data accordingly through a custom html template. Do give it a try! 
 
 ## Getting started 
 Clone the repo: 
