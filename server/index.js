@@ -3,14 +3,18 @@ const bodyParser=require('body-parser');
 const pdf=require('html-pdf');
 const cors=require('cors');
 const template=require('./files');
+const path=require('path');
 
 const app=express();
-const port=process.env.port||5000;
+const port=process.env.port||3000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
+app.use(express.static(path.join(__dirname,'build')));
+app.get('/',function(req,res){
+    res.sendFile(path.join(__dirname,'build','index.html'));
+});
 app.post('/generate-pdf',function(req,res){
     pdf.create(template(req.body),{}).toFile('report.pdf',(err)=>{
         if(err){

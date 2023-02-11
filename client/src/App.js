@@ -16,8 +16,7 @@ function App() {
   });
    const [col,setCol]=React.useState([]);
    const [values,setValues]=React.useState([]);
-
-
+   
     function handleChange(event){
       alert('file uploaded!')
       Papa.parse(event.target.files[0],{
@@ -36,7 +35,6 @@ function App() {
         }
       })
     }
-
     React.useEffect(()=>{
       var countBike=0;
       var countCar=0;
